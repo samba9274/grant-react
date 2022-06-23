@@ -44,7 +44,7 @@ export default class DonationForm extends Component {
     for (const image of this.state.images) {
       fd.append("images[]", image);
     }
-    fetch(`${process.env.GRANT_BACKEND}/donations`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/donations`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

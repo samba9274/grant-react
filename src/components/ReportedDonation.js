@@ -1,7 +1,7 @@
 export default function ReportedDonation(props) {
   const handleRemove = (e) => {
     e.preventDefault();
-    fetch(`${process.env.GRANT_BACKEND}/donations/${props.id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/donations/${props.id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

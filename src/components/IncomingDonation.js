@@ -11,7 +11,7 @@ export default class IncomingDonation extends Component {
   }
   handleAccept = (e) => {
     e.preventDefault();
-    fetch(`${process.env.GRANT_BACKEND}/donations/${this.props.id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/donations/${this.props.id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -39,12 +39,15 @@ export default class IncomingDonation extends Component {
 
   handleReport = (e) => {
     e.preventDefault();
-    fetch(`${process.env.GRANT_BACKEND}/donations/report/${this.props.id}`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${JSON.parse(sessionStorage.getItem("jwt"))}`,
-      },
-    }).then((r) => window.location.reload());
+    fetch(
+      `${process.env.REACT_APP_BACKEND}/donations/report/${this.props.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${JSON.parse(sessionStorage.getItem("jwt"))}`,
+        },
+      }
+    ).then((r) => window.location.reload());
   };
   render() {
     return (

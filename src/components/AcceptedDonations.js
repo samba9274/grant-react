@@ -8,7 +8,7 @@ export default class AcceptedDonations extends Component {
   }
   componentDidMount() {
     fetch(
-      `${process.env.GRANT_BACKEND}/accepted/${JSON.parse(
+      `${process.env.REACT_APP_BACKEND}/accepted/${JSON.parse(
         sessionStorage.getItem("userId")
       )}`
     )

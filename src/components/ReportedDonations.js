@@ -7,7 +7,7 @@ export default class ReportedDonations extends Component {
     this.state = { donations: [] };
   }
   componentDidMount() {
-    fetch(`${process.env.GRANT_BACKEND}/reported`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/reported`, {
       headers: {
         Authorization: `Bearer ${JSON.parse(sessionStorage.getItem("jwt"))}`,
       },

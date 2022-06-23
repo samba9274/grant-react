@@ -3,7 +3,7 @@ import { Component } from "react";
 export default class IncomingDonation extends Component {
   handleRemove = (e) => {
     e.preventDefault();
-    fetch(`${process.env.GRANT_BACKEND}/donations/${this.props.id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/donations/${this.props.id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

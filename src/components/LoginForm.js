@@ -12,7 +12,7 @@ export default class LoginForm extends Component {
   }
   handleLogin = (e) => {
     e.preventDefault();
-    fetch(`${process.env.GRANT_BACKEND}/validate`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/validate`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({

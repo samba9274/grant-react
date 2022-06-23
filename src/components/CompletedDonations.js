@@ -10,7 +10,9 @@ export default class CompletedDonationsPage extends Component {
   }
   componentDidMount() {
     fetch(
-      `${process.env.GRANT_BACKEND}/donations/COMPLETED?userId=${JSON.stringify(
+      `${
+        process.env.REACT_APP_BACKEND
+      }/donations/COMPLETED?userId=${JSON.stringify(
         sessionStorage.getItem("userId")
       )}`
     )

@@ -10,7 +10,9 @@ export default class PendingDonationsPage extends Component {
   }
   componentDidMount() {
     fetch(
-      `${process.env.GRANT_BACKEND}/donations/PENDING?userId=${JSON.stringify(
+      `${
+        process.env.REACT_APP_BACKEND
+      }/donations/PENDING?userId=${JSON.stringify(
         sessionStorage.getItem("userId")
       )}`
     )

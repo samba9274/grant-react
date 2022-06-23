@@ -53,7 +53,7 @@ export default class AddInstitute extends Component {
 
   handleSubmission = (e) => {
     e.preventDefault();
-    fetch(`${process.env.GRANT_BACKEND}/institute`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/institute`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

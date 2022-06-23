@@ -52,7 +52,7 @@ export default class SignUpForm extends Component {
 
   handleSubmission = (e) => {
     e.preventDefault();
-    fetch(`${process.env.GRANT_BACKEND}/users`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/users`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

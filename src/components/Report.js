@@ -8,7 +8,7 @@ export default class Report extends Component {
     };
   }
   componentDidMount() {
-    fetch(`${process.env.GRANT_BACKEND}/report`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/report`, {
       headers: {
         Authorization: `Bearer ${JSON.parse(sessionStorage.getItem("jwt"))}`,
       },
