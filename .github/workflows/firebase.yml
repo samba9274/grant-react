@@ -11,6 +11,10 @@ on:
 
 jobs:
   build:
+    env:
+      REACT_APP_BACKEND: ${{ secrets.REACT_APP_BACKEND }}
+      REACT_APP_MAPSAPI: ${{ secrets.REACT_APP_MAPSAPI }}
+
     runs-on: ubuntu-latest
 
     strategy:
