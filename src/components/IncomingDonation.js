@@ -18,7 +18,7 @@ export default class IncomingDonation extends Component {
         Authorization: `Bearer ${JSON.parse(sessionStorage.getItem("jwt"))}`,
       },
       body: JSON.stringify({
-        recieveruserId: JSON.parse(sessionStorage.getItem("userId")),
+        recieveruserId: sessionStorage.getItem("userId"),
       }),
     })
       .then((r) => r.json())
@@ -62,9 +62,8 @@ export default class IncomingDonation extends Component {
             <div className="carousel-inner rounded">
               {this.props.images.map((image, index) => (
                 <div
-                  className={`carousel-item square${
-                    index === 0 ? " active" : ""
-                  }`}
+                  className={`carousel-item square${index === 0 ? " active" : ""
+                    }`}
                 >
                   <img
                     src={image}
@@ -114,18 +113,18 @@ export default class IncomingDonation extends Component {
               this.props.inventory === 3 ||
               this.props.inventory === 6 ||
               this.props.inventory === 7) && (
-              <span class="badge rounded-pill fs-6 bg-light text-dark px-5 py-2 border border-1 border-dark me-3">
-                Clothes
-              </span>
-            )}
+                <span class="badge rounded-pill fs-6 bg-light text-dark px-5 py-2 border border-1 border-dark me-3">
+                  Clothes
+                </span>
+              )}
             {(this.props.inventory === 1 ||
               this.props.inventory === 3 ||
               this.props.inventory === 5 ||
               this.props.inventory === 7) && (
-              <span class="badge rounded-pill fs-6 bg-light text-dark px-5 py-2 border border-1 border-dark">
-                Toys
-              </span>
-            )}
+                <span class="badge rounded-pill fs-6 bg-light text-dark px-5 py-2 border border-1 border-dark">
+                  Toys
+                </span>
+              )}
           </div>
           <div className="col-12 fs-4 w-100 mb-2">{this.props.description}</div>
           <div className="col-12 fs-5 mb-4">

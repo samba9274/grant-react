@@ -10,9 +10,7 @@ export default class IncomingDonationsPage extends Component {
   }
   componentDidMount() {
     fetch(
-      `${process.env.REACT_APP_BACKEND}/donations?instituteID=${JSON.parse(
-        sessionStorage.getItem("userId")
-      )}`
+      `${process.env.REACT_APP_BACKEND}/donations?instituteID=${sessionStorage.getItem("userId")}`
     )
       .then((r) => r.json())
       .then((donations) => this.setState(donations));

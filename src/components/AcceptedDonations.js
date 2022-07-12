@@ -8,9 +8,7 @@ export default class AcceptedDonations extends Component {
   }
   componentDidMount() {
     fetch(
-      `${process.env.REACT_APP_BACKEND}/accepted/${JSON.parse(
-        sessionStorage.getItem("userId")
-      )}`
+      `${process.env.REACT_APP_BACKEND}/accepted/${sessionStorage.getItem("userId")}`
     )
       .then((d) => d.json())
       .then((dons) => {

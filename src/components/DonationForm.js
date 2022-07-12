@@ -38,8 +38,8 @@ export default class DonationForm extends Component {
     fd.append(
       "inventory",
       (this.books.checked ? 4 : 0) +
-        (this.clothes.checked ? 2 : 0) +
-        (this.toys.checked ? 1 : 0)
+      (this.clothes.checked ? 2 : 0) +
+      (this.toys.checked ? 1 : 0)
     );
     for (const image of this.state.images) {
       fd.append("images[]", image);
@@ -51,7 +51,7 @@ export default class DonationForm extends Component {
         Authorization: `Bearer ${JSON.parse(sessionStorage.getItem("jwt"))}`,
       },
       body: JSON.stringify({
-        donorUserId: JSON.parse(sessionStorage.getItem("userId")),
+        donorUserId: sessionStorage.getItem("userId"),
         description: this.description.value,
         inventory:
           (this.books.checked ? 4 : 0) +
